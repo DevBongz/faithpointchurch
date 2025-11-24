@@ -4,3 +4,8 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# Spec-Kit: Agent folder may contain credentials/auth tokens
+# Consider committing .cursor/commands/ but excluding other agent-specific data
+.cursor/
+!.cursor/commands/
