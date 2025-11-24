@@ -26,22 +26,28 @@ const libreBaskerville = Libre_Baskerville({
 export const metadata: Metadata = {
   title: "Faith Point - Modern Church",
   description: "A community of faith, hope, and love.",
+  icons: {
+    icon: [
+      { url: "/faithpointchurch.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    apple: "/favicon.png",
+  },
   openGraph: {
     title: "Faith Point - Modern Church",
     description: "A community of faith, hope, and love.",
     type: "website",
     images: [
       {
-        url: "https://replit.com/public/images/opengraph.png",
+        url: "/images/worship_moment_black_and_white.png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@replit",
     title: "Faith Point - Modern Church",
     description: "A community of faith, hope, and love.",
-    images: ["https://replit.com/public/images/opengraph.png"],
+    images: ["/images/worship_moment_black_and_white.png"],
   },
 };
 
