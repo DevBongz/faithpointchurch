@@ -23,7 +23,6 @@ export function Navbar() {
     { name: "About", href: "/about" },
     { name: "Sermons", href: "/sermons" },
     { name: "Events", href: "/events" },
-    { name: "Resources", href: "/resources" },
     { name: "Merch", href: "/merch" },
   ];
 
@@ -41,12 +40,6 @@ export function Navbar() {
           <span className="font-light">church</span>
         </Link>
 
-        {/* Three dots motif */}
-        <div className="hidden md:flex items-center gap-1.5 absolute left-1/2 -translate-x-1/2">
-          <div className="w-1.5 h-1.5 rounded-full bg-white" />
-          <div className="w-1.5 h-1.5 rounded-full bg-white" />
-          <div className="w-1.5 h-1.5 rounded-full bg-white" />
-        </div>
 
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((item) => (
@@ -70,7 +63,7 @@ export function Navbar() {
         </div>
 
         <button 
-          className="md:hidden text-white p-2 -m-2"
+          className="md:hidden text-white p-2 -m-2 relative z-50"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >

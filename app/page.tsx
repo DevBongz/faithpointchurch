@@ -3,6 +3,11 @@ import { Hero } from "@/components/sections/hero";
 import { CarouselSection } from "@/components/sections/carousel-section";
 import { EditorialGrid } from "@/components/sections/editorial-grid";
 import { MinistryCollage } from "@/components/sections/ministry-collage";
+import { MarqueeBanner } from "@/components/sections/marquee-banner";
+import { ImageMosaic } from "@/components/sections/image-mosaic";
+import { MinistryCards } from "@/components/sections/ministry-cards";
+import { Newsletter } from "@/components/sections/newsletter";
+import { SocialLinks } from "@/components/sections/social-links";
 
 export default function Home() {
   return (
@@ -10,11 +15,31 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+
+        {/* Marquee Banner */}
+        <section className="py-12 border-y border-white/10 bg-black">
+          <MarqueeBanner words={["FAITH", "HOPE", "LOVE", "COMMUNITY", "WORSHIP", "SERVE", "RESTORE"]} />
+        </section>
+
         <EditorialGrid />
         <CarouselSection />
         <MinistryCollage />
+
+        {/* Reversed Marquee */}
+        <section className="py-12 border-y border-white/10 bg-black">
+          <MarqueeBanner
+            words={["SUNDAYS 10AM", "WEDNESDAYS 6PM", "PARKLANDS", "CAPE TOWN", "COME AS YOU ARE"]}
+            reverse
+            className="text-white/20"
+          />
+        </section>
+
+        <ImageMosaic />
+        <MinistryCards />
+        <Newsletter />
+        <SocialLinks />
         
-        {/* Minimal Footer */}
+        {/* Footer */}
         <footer className="py-20 border-t border-white/10 bg-black text-center md:text-left">
           <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="col-span-1 md:col-span-2">
