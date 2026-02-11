@@ -4,8 +4,8 @@ import { Navbar } from "@/components/layout/navbar";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar } from "lucide-react";
-const concertImg = "/images/concert_event_black_and_white.png";
-const communityImg = "/images/community_gathering_black_and_white.png";
+const concertImg = "/images/insta-fp/IMG_5622.jpg";
+const communityImg = "/images/insta-fp/IMG_8691.jpg";
 
 const events = [
   {

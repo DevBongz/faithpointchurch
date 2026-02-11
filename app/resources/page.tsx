@@ -4,8 +4,8 @@ import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag, Music, BookOpen } from "lucide-react";
 import Image from "next/image";
-const bookImg = "/images/minimalist_book_cover_black_and_white.png";
-const vinylImg = "/images/vinyl_record_black_and_white.png";
+const bookImg = "/images/insta-fp/landscape-3.JPG";
+const vinylImg = "/images/insta-fp/IMG_8748.JPG";
 
 const resources = [
   {

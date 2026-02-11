@@ -1,8 +1,9 @@
-import { Navbar } from "@/components/layout/navbar";
-import { Hero } from "@/components/sections/hero";
-import { CarouselSection } from "@/components/sections/carousel-section";
-import { EditorialGrid } from "@/components/sections/editorial-grid";
-import { MinistryCollage } from "@/components/sections/ministry-collage";
+import React from "react";
+import { Navbar } from "../../../components/layout/navbar";
+import { Hero } from "../../../components/sections/hero";
+import { CarouselSection } from "../../../components/sections/carousel-section";
+import { EditorialGrid } from "../../../components/sections/editorial-grid";
+import { MinistryCollage } from "../../../components/sections/ministry-collage";
 
 export default function Home() {
   return (

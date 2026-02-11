@@ -2,9 +2,9 @@
 
 import { Navbar } from "@/components/layout/navbar";
 import { motion } from "framer-motion";
-import Image from "next/image";
-const teamImg = "/images/team_portrait_black_and_white.png";
-const stageImg = "/images/empty_stage_black_and_white.png";
+/* eslint-disable @next/next/no-img-element */
+const teamImg = "/images/insta-fp/potrait-1.jpg";
+const stageImg = "/images/insta-fp/landscape-1.JPG";
 
 export default function About() {
   return (
@@ -28,7 +28,7 @@ export default function About() {
             </p>
           </div>
           <div className="relative pt-12 md:pt-32">
-            <Image src={stageImg} alt="Our Space" className="w-full aspect-[3/4] object-cover grayscale contrast-125" />
+            <img src={stageImg} alt="Our Space" className="w-full aspect-[3/4] object-cover grayscale contrast-125" />
             <div className="absolute -left-12 top-1/2 -rotate-90 origin-center whitespace-nowrap hidden md:block">
               <span className="font-mono text-xs uppercase tracking-[0.5em] text-white/40">Established MMXXIV • New York City</span>
             </div>
@@ -60,7 +60,7 @@ export default function About() {
           </div>
           
           <div className="relative w-full aspect-[21/9] overflow-hidden group">
-            <Image src={teamImg} alt="Leadership Team" className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-1000" />
+            <img src={teamImg} alt="Leadership Team" className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-1000" />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
             
             <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black to-transparent">

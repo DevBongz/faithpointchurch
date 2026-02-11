@@ -33,7 +33,7 @@ export function Hero() {
           </h1>
           
           <p className="max-w-xl mx-auto text-lg md:text-xl font-serif italic text-white/80 mb-12 leading-relaxed">
-            "Where the spirit meets the soul in the heart of the city. Join us for a journey of transformation."
+            "Transforming and restoring lives, raising responsible overcomers"
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-6">

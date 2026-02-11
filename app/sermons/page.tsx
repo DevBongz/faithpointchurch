@@ -4,9 +4,9 @@ import { Navbar } from "@/components/layout/navbar";
 import { motion } from "framer-motion";
 import { Play, Mic, Video, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
-const preacherImg = "/images/preacher_on_stage_black_and_white.png";
-const bibleImg = "/images/bible_study_black_and_white.png";
+/* eslint-disable @next/next/no-img-element */
+const preacherImg = "/images/insta-fp/potrait-3.jpg";
+const bibleImg = "/images/insta-fp/landscape-2.jpg";
 
 const series = [
   { title: "The Book of Acts", subtitle: "Unstoppable Church", img: preacherImg },
@@ -52,7 +52,7 @@ export default function Sermons() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {series.map((item, idx) => (
               <div key={idx} className="group relative aspect-[4/5] overflow-hidden bg-white/5 cursor-pointer">
-                <Image src={item.img} alt={item.title} className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-80" />
+                <img src={item.img} alt={item.title} className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700 opacity-60 group-hover:opacity-80" />
                 <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black/90 to-transparent">
                   <p className="font-serif italic text-white/60 mb-2">{item.subtitle}</p>
                   <h2 className="font-display text-3xl uppercase font-bold leading-tight group-hover:text-white transition-colors">{item.title}</h2>

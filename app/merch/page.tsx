@@ -3,9 +3,9 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-const hoodieImg = "/images/hoodie_merch_black_and_white.png";
-const toteImg = "/images/tote_bag_merch_black_and_white.png";
-const tshirtImg = "/images/minimalist_merch_black_and_white.png";
+const hoodieImg = "/images/insta-fp/potrait-4.jpg";
+const toteImg = "/images/insta-fp/potrait-6.jpg";
+const tshirtImg = "/images/insta-fp/potrait-7.jpg";
 
 const products = [
   { id: 1, name: "Essential Hoodie", price: "$55", img: hoodieImg, tag: "Best Seller" },

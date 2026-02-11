@@ -1,0 +1,17 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/designs/page": "/designs",
+  "/designs/version-a/page": "/designs/version-a",
+  "/designs/version-b/page": "/designs/version-b",
+  "/designs/version-c/page": "/designs/version-c",
+  "/designs/version-d/page": "/designs/version-d",
+  "/designs/version-e/page": "/designs/version-e",
+  "/events/page": "/events",
+  "/favicon.ico/route": "/favicon.ico",
+  "/merch/page": "/merch",
+  "/page": "/",
+  "/resources/page": "/resources",
+  "/sermons/page": "/sermons"
+}

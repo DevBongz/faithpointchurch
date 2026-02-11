@@ -18,17 +18,19 @@ export default function Home() {
         <footer className="py-20 border-t border-white/10 bg-black text-center md:text-left">
           <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="col-span-1 md:col-span-2">
-              <h2 className="font-display text-4xl font-bold uppercase mb-6">Faith Point</h2>
-              <p className="font-serif text-white/50 max-w-sm">
-                124 Faith Avenue, New York, NY 10012 <br />
-                hello@faithpoint.church <br />
-                (555) 123-4567
+              <h2 className="text-2xl font-bold mb-6 tracking-tight">
+                <span className="font-bold">faithpoint</span>
+                <span className="font-light">church</span>
+              </h2>
+              <p className="font-serif italic text-white/50 max-w-sm">
+                Ennerdale Street, Milnerton Rural, Parklands — Cape Town <br />
+                hello@faithpoint.church
               </p>
             </div>
             
             <div>
-              <h4 className="font-mono text-xs uppercase tracking-widest text-white/40 mb-6">Connect</h4>
-              <ul className="space-y-4 font-display uppercase text-sm tracking-wider">
+              <h4 className="text-xs tracking-widest text-white/40 mb-6">Connect</h4>
+              <ul className="space-y-4 text-sm tracking-wider">
                 <li><a href="#" className="hover:text-white/60">Instagram</a></li>
                 <li><a href="#" className="hover:text-white/60">Youtube</a></li>
                 <li><a href="#" className="hover:text-white/60">Podcast</a></li>
@@ -36,21 +38,24 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="font-mono text-xs uppercase tracking-widest text-white/40 mb-6">Times</h4>
+              <h4 className="text-xs tracking-widest text-white/40 mb-6">Times</h4>
               <ul className="space-y-4 font-serif italic text-white/70">
-                <li>Sunday 9:00 AM</li>
-                <li>Sunday 11:00 AM</li>
-                <li>Wednesday 7:00 PM</li>
+                <li>Sunday 10AM</li>
+                <li>Wednesday Prayer 6PM</li>
               </ul>
             </div>
           </div>
-          <div className="container mx-auto px-6 mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-white/30 font-mono uppercase tracking-widest">
+          <div className="container mx-auto px-6 mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-white/30 tracking-widest">
             <span>© 2024 Faith Point Church</span>
-            <span>Designed with Soul</span>
+            <div className="flex items-center gap-1.5 my-4 md:my-0">
+              <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
+              <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
+              <div className="w-1.5 h-1.5 rounded-full bg-white/30" />
+            </div>
+            <span>come as you are</span>
           </div>
         </footer>
       </main>
     </div>
   );
 }
-

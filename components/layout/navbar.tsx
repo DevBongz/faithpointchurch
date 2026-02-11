@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Search, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -36,9 +35,18 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-display font-bold tracking-tighter uppercase hover:opacity-80 transition-opacity">
-          Faith<span className="font-light">Point</span>
+        {/* Logo — faithpointchurch branding */}
+        <Link href="/" className="text-lg tracking-tight hover:opacity-80 transition-opacity">
+          <span className="font-bold">faithpoint</span>
+          <span className="font-light">church</span>
         </Link>
+
+        {/* Three dots motif */}
+        <div className="hidden md:flex items-center gap-1.5 absolute left-1/2 -translate-x-1/2">
+          <div className="w-1.5 h-1.5 rounded-full bg-white" />
+          <div className="w-1.5 h-1.5 rounded-full bg-white" />
+          <div className="w-1.5 h-1.5 rounded-full bg-white" />
+        </div>
 
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((item) => (
@@ -46,7 +54,7 @@ export function Navbar() {
               key={item.name} 
               href={item.href}
               className={cn(
-                "text-xs uppercase tracking-widest hover:text-white/60 transition-colors font-medium",
+                "text-xs tracking-widest hover:text-white/60 transition-colors font-medium",
                 pathname === item.href ? "text-white underline decoration-1 underline-offset-4" : "text-white/80"
               )}
             >
@@ -56,19 +64,21 @@ export function Navbar() {
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="ghost" size="icon" className="rounded-full hover:bg-white/10">
-            <Search className="w-4 h-4" />
-          </Button>
-          <Button variant="outline" className="rounded-full px-6 border-white/20 hover:bg-white hover:text-black transition-all uppercase text-xs tracking-widest">
+          <Button variant="outline" className="rounded-full px-6 border-white/20 hover:bg-white hover:text-black transition-all text-xs tracking-widest">
             Plan a Visit
           </Button>
         </div>
 
         <button 
-          className="md:hidden text-white"
+          className="md:hidden text-white p-2 -m-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
         >
-          {mobileMenuOpen ? <X /> : <Menu />}
+          {mobileMenuOpen ? (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+          ) : (
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12" /><line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /></svg>
+          )}
         </button>
       </div>
 
@@ -79,7 +89,7 @@ export function Navbar() {
             <Link 
               key={item.name} 
               href={item.href}
-              className="text-4xl font-display font-bold uppercase tracking-tight hover:text-white/50 transition-colors"
+              className="text-4xl font-bold tracking-tight hover:text-white/50 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               {item.name}
