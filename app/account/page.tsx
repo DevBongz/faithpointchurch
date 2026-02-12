@@ -70,9 +70,11 @@ export default function AccountPage() {
   const convexGiving = useQuery(api.giving.listByUser, userId ? { userId } : "skip");
   const convexOrders = useQuery(api.orders.listByUser, userId ? { userId } : "skip");
 
-  // Use Convex data if available, otherwise fallback
-  const givingHistory = convexGiving ?? fallbackGiving;
-  const orderHistory = convexOrders ?? fallbackOrders;
+  // Use Convex data if it has entries, otherwise show fallback
+  const givingHistory =
+    convexGiving && convexGiving.length > 0 ? convexGiving : fallbackGiving;
+  const orderHistory =
+    convexOrders && convexOrders.length > 0 ? convexOrders : fallbackOrders;
 
   useEffect(() => {
     if (!isPending && !session) {

@@ -66,8 +66,11 @@ export default function Merch() {
   // Fetch from Convex — undefined while loading, null if no data
   const convexProducts = useQuery(api.products.list, {});
 
-  // Use Convex data if available, otherwise fallback to static
-  const allProducts = convexProducts ?? fallbackProducts;
+  // Use Convex data if it has products, otherwise show fallback
+  const allProducts =
+    convexProducts && convexProducts.length > 0
+      ? convexProducts
+      : fallbackProducts;
   const isLoading = convexProducts === undefined;
 
   const filteredProducts =
