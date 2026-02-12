@@ -15,14 +15,37 @@ type Category = "all" | "apparel" | "accessories" | "music" | "books";
 
 // Fallback static data (used when Convex isn't connected yet)
 const fallbackProducts = [
-  { _id: "1" as any, name: "Essential Hoodie", price: 5500, image: "/images/insta-fp/potrait-4.jpg", tag: "Best Seller", category: "apparel" as const, inStock: true },
-  { _id: "2" as any, name: "Sunday Tote", price: 2500, image: "/images/insta-fp/potrait-6.jpg", tag: "Limited", category: "accessories" as const, inStock: true },
-  { _id: "3" as any, name: "Core Tee", price: 3500, image: "/images/insta-fp/potrait-7.jpg", tag: "New", category: "apparel" as const, inStock: true },
-  { _id: "4" as any, name: "Heavyweight Crew", price: 6000, image: "/images/insta-fp/potrait-4.jpg", tag: "Sold Out", category: "apparel" as const, inStock: false },
-  { _id: "5" as any, name: "Faith Cap", price: 2800, image: "/images/insta-fp/potrait-8.jpg", tag: "New", category: "accessories" as const, inStock: true },
-  { _id: "6" as any, name: "Echoes of Grace", price: 2500, image: "/images/insta-fp/IMG_8748.JPG", tag: "Vinyl", category: "music" as const, inStock: true },
-  { _id: "7" as any, name: "The Art of Stillness", price: 1800, image: "/images/insta-fp/landscape-3.JPG", tag: "New Release", category: "books" as const, inStock: true },
-  { _id: "8" as any, name: "Live at The Loft", price: 1500, image: "/images/insta-fp/IMG_8748.JPG", tag: "Digital", category: "music" as const, inStock: true },
+  // ── Apparel ──────────────────────────────────────────────────
+  { _id: "1" as any, name: "Essential Hoodie", price: 89900, image: "/images/hoodie_merch_black_and_white.png", tag: "Best Seller", category: "apparel" as const, inStock: true },
+  { _id: "2" as any, name: "Core Tee", price: 44900, image: "/images/insta-fp/potrait-7.jpg", tag: "New", category: "apparel" as const, inStock: true },
+  { _id: "3" as any, name: "Heavyweight Crew", price: 74900, image: "/images/insta-fp/potrait-4.jpg", tag: "Sold Out", category: "apparel" as const, inStock: false },
+  { _id: "4" as any, name: "Oversized Drop Tee", price: 54900, image: "/images/insta-fp/potrait-5.jpg", tag: "New", category: "apparel" as const, inStock: true },
+  { _id: "5" as any, name: "FaithPoint Jersey", price: 69900, image: "/images/insta-fp/potrait-3.jpg", tag: "Limited", category: "apparel" as const, inStock: true },
+  { _id: "6" as any, name: "Sunday Best Crewneck", price: 64900, image: "/images/insta-fp/potrait-1.jpg", tag: "", category: "apparel" as const, inStock: true },
+  { _id: "7" as any, name: "Grace Long Sleeve", price: 52900, image: "/images/minimalist_merch_black_and_white.png", tag: "New", category: "apparel" as const, inStock: true },
+  { _id: "8" as any, name: "Vintage Wash Tee", price: 39900, image: "/images/insta-fp/potrait-2.jpg", tag: "Sold Out", category: "apparel" as const, inStock: false },
+
+  // ── Accessories ──────────────────────────────────────────────
+  { _id: "9" as any, name: "Sunday Tote", price: 34900, image: "/images/tote_bag_merch_black_and_white.png", tag: "Best Seller", category: "accessories" as const, inStock: true },
+  { _id: "10" as any, name: "Faith Cap", price: 29900, image: "/images/insta-fp/potrait-8.jpg", tag: "New", category: "accessories" as const, inStock: true },
+  { _id: "11" as any, name: "Canvas Sling Bag", price: 44900, image: "/images/insta-fp/IMG_8691.jpg", tag: "Limited", category: "accessories" as const, inStock: true },
+  { _id: "12" as any, name: "Enamel Pin Set", price: 14900, image: "/images/insta-fp/IMG_8768.jpg", tag: "New", category: "accessories" as const, inStock: true },
+  { _id: "13" as any, name: "Woven Beanie", price: 24900, image: "/images/insta-fp/potrait-6.jpg", tag: "", category: "accessories" as const, inStock: true },
+  { _id: "14" as any, name: "Scripture Bracelet", price: 19900, image: "/images/insta-fp/IMG_8747.jpg", tag: "New", category: "accessories" as const, inStock: true },
+
+  // ── Music ────────────────────────────────────────────────────
+  { _id: "15" as any, name: "Echoes of Grace", price: 34900, image: "/images/vinyl_record_black_and_white.png", tag: "Vinyl", category: "music" as const, inStock: true },
+  { _id: "16" as any, name: "Live at The Loft", price: 19900, image: "/images/insta-fp/IMG_8748.JPG", tag: "Digital", category: "music" as const, inStock: true },
+  { _id: "17" as any, name: "Worship Collective Vol. 1", price: 29900, image: "/images/insta-fp/landscape-2.jpg", tag: "New", category: "music" as const, inStock: true },
+  { _id: "18" as any, name: "Hymns Reimagined", price: 24900, image: "/images/insta-fp/landscape-1.JPG", tag: "CD", category: "music" as const, inStock: true },
+  { _id: "19" as any, name: "Acoustic Sessions", price: 14900, image: "/images/insta-fp/landscape-4.JPG", tag: "Digital", category: "music" as const, inStock: true },
+
+  // ── Books ────────────────────────────────────────────────────
+  { _id: "20" as any, name: "The Art of Stillness", price: 24900, image: "/images/minimalist_book_cover_black_and_white.png", tag: "New Release", category: "books" as const, inStock: true },
+  { _id: "21" as any, name: "Walking in Purpose", price: 29900, image: "/images/insta-fp/landscape-3.JPG", tag: "Best Seller", category: "books" as const, inStock: true },
+  { _id: "22" as any, name: "Devotional Journal", price: 19900, image: "/images/insta-fp/IMG_8708.jpg", tag: "New", category: "books" as const, inStock: true },
+  { _id: "23" as any, name: "30 Days of Faith", price: 17900, image: "/images/bible_study_black_and_white.png", tag: "", category: "books" as const, inStock: true },
+  { _id: "24" as any, name: "Letters to the Church", price: 22900, image: "/images/community_gathering_black_and_white.png", tag: "Limited", category: "books" as const, inStock: true },
 ];
 
 const categories: { key: Category; label: string }[] = [
@@ -34,7 +57,7 @@ const categories: { key: Category; label: string }[] = [
 ];
 
 function formatPrice(cents: number): string {
-  return `$${(cents / 100).toFixed(0)}`;
+  return `R${(cents / 100).toFixed(0)}`;
 }
 
 export default function Merch() {
