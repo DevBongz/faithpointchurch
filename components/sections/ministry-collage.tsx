@@ -35,7 +35,7 @@ export function MinistryCollage() {
               </div>
               
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                 <img src={item.img} className="w-full h-full object-cover grayscale" alt={item.title} />
+                 <img src={item.img} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt={item.title} />
               </div>
 
               <h3 className="text-4xl font-bold z-10 relative tracking-tight group-hover:translate-x-4 transition-transform duration-500">

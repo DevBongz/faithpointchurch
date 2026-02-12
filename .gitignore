@@ -9,3 +9,5 @@ vite.config.ts.*
 # Consider committing .cursor/commands/ but excluding other agent-specific data
 .cursor/
 !.cursor/commands/
+.env.local
+auth.db

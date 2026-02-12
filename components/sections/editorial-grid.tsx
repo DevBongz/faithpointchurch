@@ -43,7 +43,7 @@ export function EditorialGrid() {
               className="relative z-10"
             >
               <div className="overflow-hidden rounded-2xl">
-                <img src={img1} alt="Bible Study" className="w-full h-[600px] object-cover grayscale contrast-110" />
+                <img src={img1} alt="Bible Study" className="w-full h-[600px] object-cover grayscale hover:grayscale-0 contrast-110 transition-all duration-700" />
               </div>
               
               {/* Floating Quote */}
@@ -74,7 +74,7 @@ export function EditorialGrid() {
                &ldquo;The most beautiful thing we can experience is the mysterious. It is the source of all true art and science.&rdquo;
              </p>
              <div className="overflow-hidden rounded-2xl">
-               <img src={img2} alt="Worship" className="w-full aspect-square object-cover grayscale" />
+               <img src={img2} alt="Worship" className="w-full aspect-square object-cover grayscale hover:grayscale-0 transition-all duration-700" />
              </div>
           </div>
           

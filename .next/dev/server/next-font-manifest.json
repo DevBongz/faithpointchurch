@@ -1,46 +1,21 @@
 {
   "app": {
-    "[project]/Documents/faithPoint/app/_not-found/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
-      "static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2",
-      "static/media/01e4147cff8141ee-s.p.7787e134.woff2"
-    ],
     "[project]/Documents/faithPoint/app/about/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2",
       "static/media/01e4147cff8141ee-s.p.7787e134.woff2"
     ],
-    "[project]/Documents/faithPoint/app/designs/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
-      "static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2",
-      "static/media/01e4147cff8141ee-s.p.7787e134.woff2"
-    ],
-    "[project]/Documents/faithPoint/app/designs/version-a/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
-      "static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2",
-      "static/media/01e4147cff8141ee-s.p.7787e134.woff2"
-    ],
-    "[project]/Documents/faithPoint/app/designs/version-b/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
-      "static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2",
-      "static/media/01e4147cff8141ee-s.p.7787e134.woff2"
-    ],
-    "[project]/Documents/faithPoint/app/designs/version-c/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
-      "static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2",
-      "static/media/01e4147cff8141ee-s.p.7787e134.woff2"
-    ],
-    "[project]/Documents/faithPoint/app/designs/version-d/page": [
-      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
-      "static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2",
-      "static/media/01e4147cff8141ee-s.p.7787e134.woff2"
-    ],
-    "[project]/Documents/faithPoint/app/designs/version-e/page": [
+    "[project]/Documents/faithPoint/app/account/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2",
       "static/media/01e4147cff8141ee-s.p.7787e134.woff2"
     ],
     "[project]/Documents/faithPoint/app/events/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+      "static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2",
+      "static/media/01e4147cff8141ee-s.p.7787e134.woff2"
+    ],
+    "[project]/Documents/faithPoint/app/media/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2",
       "static/media/01e4147cff8141ee-s.p.7787e134.woff2"
@@ -55,12 +30,12 @@
       "static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2",
       "static/media/01e4147cff8141ee-s.p.7787e134.woff2"
     ],
-    "[project]/Documents/faithPoint/app/resources/page": [
+    "[project]/Documents/faithPoint/app/sign-in/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2",
       "static/media/01e4147cff8141ee-s.p.7787e134.woff2"
     ],
-    "[project]/Documents/faithPoint/app/sermons/page": [
+    "[project]/Documents/faithPoint/app/sign-up/page": [
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
       "static/media/8bd76523131fa0fc-s.p.eb17b6b9.woff2",
       "static/media/01e4147cff8141ee-s.p.7787e134.woff2"

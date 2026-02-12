@@ -576,7 +576,7 @@ export default function VersionE() {
             <div className="md:col-span-2">
               <h2 className="text-2xl mb-4 tracking-tight">
                 <span className="font-bold">faithpoint</span>
-                <span className="font-light">church</span>
+                <span className="font-serif font-light italic">church</span>
               </h2>
               <p className="font-serif italic text-white/40 max-w-sm leading-relaxed">
                 Ennerdale Street, Milnerton Rural, Parklands

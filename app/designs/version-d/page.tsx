@@ -22,7 +22,7 @@ export default function VersionD() {
 
           <span className="text-base tracking-tight">
             <span className="font-bold">faithpoint</span>
-            <span className="font-light">church</span>
+            <span className="font-serif font-light italic">church</span>
           </span>
 
           <div className="flex items-center gap-1.5">
@@ -207,7 +207,7 @@ export default function VersionD() {
           >
             <span className="text-base tracking-tight block mb-4">
               <span className="font-bold">faithpoint</span>
-              <span className="font-light">church</span>
+              <span className="font-serif font-light italic">church</span>
             </span>
 
             <h2 className="font-serif italic text-5xl md:text-7xl leading-[1] mb-4">
@@ -285,7 +285,7 @@ export default function VersionD() {
         <div className="container mx-auto max-w-5xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
           <span className="text-base tracking-tight">
             <span className="font-bold">faithpoint</span>
-            <span className="font-light">church</span>
+            <span className="font-serif font-light italic">church</span>
           </span>
 
           <div className="flex items-center gap-1.5">

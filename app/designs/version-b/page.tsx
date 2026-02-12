@@ -21,7 +21,7 @@ export default function VersionB() {
 
           <span className="text-base tracking-tight">
             <span className="font-bold">faithpoint</span>
-            <span className="font-light">church</span>
+            <span className="font-serif font-light italic">church</span>
           </span>
 
           <div className="flex items-center gap-1.5">
@@ -192,7 +192,7 @@ export default function VersionB() {
         <div className="container mx-auto max-w-6xl flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
           <span className="text-base tracking-tight">
             <span className="font-bold">faithpoint</span>
-            <span className="font-light">church</span>
+            <span className="font-serif font-light italic">church</span>
           </span>
           <div className="flex gap-1.5">
             <div className="w-2 h-2 rounded-full bg-white" />

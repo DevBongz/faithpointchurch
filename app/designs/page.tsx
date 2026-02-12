@@ -45,7 +45,7 @@ export default function DesignShowcase() {
         <div className="container mx-auto px-6 py-5 flex items-center justify-between">
           <Link href="/" className="text-base tracking-tight">
             <span className="font-bold">faithpoint</span>
-            <span className="font-light">church</span>
+            <span className="font-serif font-light italic">church</span>
           </Link>
 
           <div className="flex items-center gap-1.5">
@@ -145,7 +145,7 @@ export default function DesignShowcase() {
         <div className="container mx-auto max-w-5xl flex items-center justify-between text-xs text-black/30 tracking-widest">
           <span>
             <span className="font-bold">faithpoint</span>
-            <span className="font-light">church</span>
+            <span className="font-serif font-light italic">church</span>
           </span>
           <span>5 concepts</span>
         </div>

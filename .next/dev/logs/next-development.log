@@ -1,66 +1,16 @@
-[00:00:00.977] Server  LOG      ✓ Ready in 730ms
-[00:00:04.025] Server  LOG      ○ Compiling / ...
-[00:00:04.774] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[00:00:07.279] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:07.601] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:00:12.230] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:12.445] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:28:37.417] Server  LOG      ✓ Compiled in 781ms
-[16:31:35.698] Browser ERROR   uncaughtError: Error: Image with src "/images/insta-fp/landscape-3.JPG" is missing required "width" property.
-[16:31:50.679] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[16:31:53.078] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[16:31:53.306] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[16:32:47.190] Browser ERROR   uncaughtError: Error: Image with src "/images/insta-fp/landscape-1.JPG" is missing required "width" property.
-[16:33:06.785] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[16:33:08.872] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[16:34:05.290] Browser ERROR   uncaughtError: Error: Image with src "/images/insta-fp/landscape-1.JPG" is missing required "width" property.
-[16:35:13.607] Server  LOG      ✓ Compiled in 1296ms
-[16:35:14.077] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[16:35:14.301] Server  ERROR    ⨯ ReferenceError: Image is not defined
-[16:35:14.322] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[16:35:14.958] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[16:35:15.248] Browser ERROR   uncaughtError: TypeError: Failed to construct 'Image': Please use the 'new' operator, this DOM object constructor cannot be called as a function.
-[16:35:18.530] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[16:35:18.554] Server  LOG      ✓ Compiled in 265ms
-[16:35:18.695] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[16:35:18.952] Server  ERROR    ⨯ ReferenceError: Image is not defined
-[16:35:19.695] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[16:35:20.775] Browser ERROR   uncaughtError: TypeError: Failed to construct 'Image': Please use the 'new' operator, this DOM object constructor cannot be called as a function.
-[16:35:27.398] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[16:35:27.422] Server  LOG      ✓ Compiled in 88ms
-[16:35:27.530] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[16:35:27.814] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[16:40:42.425] Browser ERROR   uncaughtError: Error: Image with src "/images/insta-fp/potrait-3.jpg" is missing required "width" property.
-[16:41:19.382] Server  LOG      ✓ Compiled in 528ms
-[16:41:19.455] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[16:41:20.391] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[16:41:20.572] Server  LOG      ✓ Compiled in 41ms
-[17:02:39.823] Server  LOG      ✓ Compiled in 436ms
-[17:03:35.976] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[17:04:15.168] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[17:05:30.240] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[17:05:52.072] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[17:05:52.271] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[17:07:00.186] Server  LOG      ✓ Compiled in 169ms
-[17:07:08.800] Server  LOG      ✓ Compiled in 81ms
-[17:35:46.284] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[17:48:35.265] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[17:48:35.271] Server  LOG      ✓ Compiled in 1002ms
-[17:48:35.533] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[17:54:35.406] Server  LOG      ✓ Compiled in 182ms
-[17:55:55.466] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[17:55:57.442] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[17:56:53.945] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[17:57:06.577] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[17:57:29.870] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[17:57:30.039] Browser ERROR   uncaughtError: Error: Image with src "/images/insta-fp/landscape-3.JPG" is missing required "width" property.
-[17:57:40.551] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[17:57:43.210] Browser ERROR   uncaughtError: Error: Image with src "/images/insta-fp/potrait-4.jpg" is missing required "width" property.
-[17:57:48.434] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[17:59:15.073] Server  LOG      ✓ Compiled in 143ms
-[17:59:23.397] Server  LOG      ✓ Compiled in 96ms
-[18:00:24.159] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[18:00:25.165] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[18:00:30.334] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[18:00:32.773] Server  WARN     ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-[18:03:23.045] Server  LOG      ✓ Compiled in 554ms
+[00:00:01.142] Server  LOG     ✓ Ready in 922ms
+[00:00:02.554] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:00:04.431] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:14.308] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:29.660] Server  LOG       Reload env: .env.local
+[00:12:30.096] Server  WARN    ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+[00:17:00.489] Server  ERROR   (node:26198) Warning: SECURITY WARNING: The SSL modes 'prefer', 'require', and 'verify-ca' are treated as aliases for 'verify-full'.
+In the next major version (pg-connection-string v3.0.0 and pg v9.0.0), these modes will adopt standard libpq semantics, which have weaker security guarantees.
+
+To prepare for this change:
+- If you want the current behavior, explicitly use 'sslmode=verify-full'
+- If you want libpq compatibility now, use 'uselibpqcompat=true&sslmode=require'
+
+See https://www.postgresql.org/docs/current/libpq-ssl.html for libpq SSL mode definitions.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[00:17:03.039] Server  ERROR   2026-02-12T14:28:18.595Z ERROR [Better Auth]: INTERNAL_SERVER_ERROR error: relation "session" does not exist

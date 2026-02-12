@@ -72,7 +72,7 @@ export default function Events() {
         <div className="mb-24 relative group cursor-pointer">
           <div className="aspect-[21/9] overflow-hidden relative">
              <div className="absolute inset-0 bg-black/40 z-10 group-hover:bg-black/20 transition-colors duration-500" />
-             <img src={concertImg} alt="Featured" className="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-1000" />
+             <img src={concertImg} alt="Featured" className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
              
              <div className="absolute bottom-0 left-0 p-8 md:p-16 z-20 w-full">
                 <div className="flex flex-col md:flex-row justify-between items-end">

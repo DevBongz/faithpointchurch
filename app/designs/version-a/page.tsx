@@ -22,7 +22,7 @@ export default function VersionA() {
 
           <span className="text-base tracking-tight">
             <span className="font-bold">faithpoint</span>
-            <span className="font-light">church</span>
+            <span className="font-serif font-light italic">church</span>
           </span>
 
           <div className="flex items-center gap-1.5">
@@ -248,7 +248,7 @@ export default function VersionA() {
           <div>
             <span className="text-lg tracking-tight">
               <span className="font-bold">faithpoint</span>
-              <span className="font-light">church</span>
+              <span className="font-serif font-light italic">church</span>
             </span>
             <p className="text-xs text-black/30 mt-1">
               Ennerdale Street, Milnerton Rural, Parklands — Cape Town

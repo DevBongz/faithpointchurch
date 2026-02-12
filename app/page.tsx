@@ -45,7 +45,7 @@ export default function Home() {
             <div className="col-span-1 md:col-span-2">
               <h2 className="text-2xl font-bold mb-6 tracking-tight">
                 <span className="font-bold">faithpoint</span>
-                <span className="font-light">church</span>
+                <span className="font-serif font-light italic">church</span>
               </h2>
               <p className="font-serif italic text-white/50 max-w-sm">
                 Ennerdale Street, Milnerton Rural, Parklands — Cape Town <br />

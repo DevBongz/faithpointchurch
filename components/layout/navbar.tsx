@@ -5,11 +5,14 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { useSession } from "@/lib/auth-client";
+import { User } from "lucide-react";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { data: session } = useSession();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +24,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: "About", href: "/about" },
-    { name: "Sermons", href: "/sermons" },
+    { name: "Media", href: "/media" },
     { name: "Events", href: "/events" },
     { name: "Merch", href: "/merch" },
   ];
@@ -37,9 +40,8 @@ export function Navbar() {
         {/* Logo — faithpointchurch branding */}
         <Link href="/" className="text-lg tracking-tight hover:opacity-80 transition-opacity">
           <span className="font-bold">faithpoint</span>
-          <span className="font-light">church</span>
+          <span className="font-serif font-light italic">church</span>
         </Link>
-
 
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((item) => (
@@ -56,10 +58,37 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center space-x-4">
-          <Button variant="outline" className="rounded-full px-6 border-white/20 hover:bg-white hover:text-black transition-all text-xs tracking-widest">
-            Plan a Visit
-          </Button>
+        <div className="hidden md:flex items-center space-x-3">
+          {session ? (
+            <Link
+              href="/account"
+              className={cn(
+                "flex items-center gap-2 rounded-full px-5 py-2 border transition-all text-xs tracking-widest",
+                pathname === "/account"
+                  ? "bg-white text-black border-white"
+                  : "border-white/20 hover:bg-white hover:text-black"
+              )}
+            >
+              <User className="w-3.5 h-3.5" />
+              {session.user.name?.split(" ")[0] || "Account"}
+            </Link>
+          ) : (
+            <>
+              <Link
+                href="/sign-in"
+                className="text-xs tracking-widest text-white/80 hover:text-white/60 transition-colors font-medium px-3 py-2"
+              >
+                Sign In
+              </Link>
+              <Button
+                variant="outline"
+                className="rounded-full px-6 border-white/20 hover:bg-white hover:text-black transition-all text-xs tracking-widest"
+                asChild
+              >
+                <Link href="/sign-up">Join</Link>
+              </Button>
+            </>
+          )}
         </div>
 
         <button 
@@ -88,6 +117,34 @@ export function Navbar() {
               {item.name}
             </Link>
           ))}
+          <div className="pt-8 border-t border-white/10 w-48 text-center space-y-4">
+            {session ? (
+              <Link 
+                href="/account"
+                className="text-2xl font-bold tracking-tight hover:text-white/50 transition-colors block"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Account
+              </Link>
+            ) : (
+              <>
+                <Link
+                  href="/sign-in"
+                  className="text-2xl font-bold tracking-tight hover:text-white/50 transition-colors block"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/sign-up"
+                  className="text-lg tracking-tight text-white/50 hover:text-white transition-colors block"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Create Account
+                </Link>
+              </>
+            )}
+          </div>
         </div>
       )}
     </nav>

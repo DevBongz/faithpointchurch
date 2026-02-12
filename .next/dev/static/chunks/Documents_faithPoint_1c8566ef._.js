@@ -118,16 +118,16 @@ function Navbar() {
             href: "/about"
         },
         {
+            name: "Media",
+            href: "/media"
+        },
+        {
             name: "Sermons",
             href: "/sermons"
         },
         {
             name: "Events",
             href: "/events"
-        },
-        {
-            name: "Resources",
-            href: "/resources"
         },
         {
             name: "Merch",
@@ -153,7 +153,7 @@ function Navbar() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "font-light",
+                                className: "font-serif font-light italic",
                                 children: "church"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
@@ -167,36 +167,6 @@ function Navbar() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "hidden md:flex items-center gap-1.5 absolute left-1/2 -translate-x-1/2",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-1.5 h-1.5 rounded-full bg-white"
-                            }, void 0, false, {
-                                fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                                lineNumber: 46,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-1.5 h-1.5 rounded-full bg-white"
-                            }, void 0, false, {
-                                fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                                lineNumber: 47,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "w-1.5 h-1.5 rounded-full bg-white"
-                            }, void 0, false, {
-                                fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                                lineNumber: 48,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                        lineNumber: 45,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "hidden md:flex items-center space-x-8",
                         children: navLinks.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: item.href,
@@ -204,12 +174,12 @@ function Navbar() {
                                 children: item.name
                             }, item.name, false, {
                                 fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                                lineNumber: 53,
+                                lineNumber: 47,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                        lineNumber: 51,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -220,12 +190,12 @@ function Navbar() {
                             children: "Plan a Visit"
                         }, void 0, false, {
                             fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                            lineNumber: 67,
+                            lineNumber: 61,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                        lineNumber: 66,
+                        lineNumber: 60,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -246,20 +216,20 @@ function Navbar() {
                                     d: "M18 6 6 18"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                                    lineNumber: 78,
+                                    lineNumber: 72,
                                     columnNumber: 156
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                     d: "m6 6 12 12"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                                    lineNumber: 78,
+                                    lineNumber: 72,
                                     columnNumber: 179
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                            lineNumber: 78,
+                            lineNumber: 72,
                             columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                             width: "24",
@@ -278,7 +248,7 @@ function Navbar() {
                                     y2: "12"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                                    lineNumber: 80,
+                                    lineNumber: 74,
                                     columnNumber: 156
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -288,7 +258,7 @@ function Navbar() {
                                     y2: "6"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                                    lineNumber: 80,
+                                    lineNumber: 74,
                                     columnNumber: 195
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("line", {
@@ -298,18 +268,18 @@ function Navbar() {
                                     y2: "18"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                                    lineNumber: 80,
+                                    lineNumber: 74,
                                     columnNumber: 232
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                            lineNumber: 80,
+                            lineNumber: 74,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                        lineNumber: 72,
+                        lineNumber: 66,
                         columnNumber: 9
                     }, this)
                 ]
@@ -327,12 +297,12 @@ function Navbar() {
                         children: item.name
                     }, item.name, false, {
                         fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                        lineNumber: 89,
+                        lineNumber: 83,
                         columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/Documents/faithPoint/components/layout/navbar.tsx",
-                lineNumber: 87,
+                lineNumber: 81,
                 columnNumber: 9
             }, this)
         ]
@@ -492,7 +462,9 @@ function Merch() {
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                                 src: product.img,
                                                 alt: product.name,
-                                                className: `w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-700 ${product.tag === 'Sold Out' ? 'opacity-50' : ''}`
+                                                fill: true,
+                                                sizes: "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw",
+                                                className: `w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ${product.tag === 'Sold Out' ? 'opacity-50' : ''}`
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/faithPoint/app/merch/page.tsx",
                                                 lineNumber: 47,
@@ -505,12 +477,12 @@ function Merch() {
                                                     children: product.tag === 'Sold Out' ? 'Restocking Soon' : 'Add to Cart'
                                                 }, void 0, false, {
                                                     fileName: "[project]/Documents/faithPoint/app/merch/page.tsx",
-                                                    lineNumber: 54,
+                                                    lineNumber: 56,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/faithPoint/app/merch/page.tsx",
-                                                lineNumber: 53,
+                                                lineNumber: 55,
                                                 columnNumber: 18
                                             }, this)
                                         ]
@@ -527,7 +499,7 @@ function Merch() {
                                                 children: product.name
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/faithPoint/app/merch/page.tsx",
-                                                lineNumber: 61,
+                                                lineNumber: 63,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$faithPoint$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -535,13 +507,13 @@ function Merch() {
                                                 children: product.price
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/faithPoint/app/merch/page.tsx",
-                                                lineNumber: 62,
+                                                lineNumber: 64,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Documents/faithPoint/app/merch/page.tsx",
-                                        lineNumber: 60,
+                                        lineNumber: 62,
                                         columnNumber: 15
                                     }, this)
                                 ]
