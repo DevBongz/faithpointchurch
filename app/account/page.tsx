@@ -50,11 +50,11 @@ const typeLabels: Record<string, string> = {
 };
 
 function formatPrice(cents: number): string {
-  return `$${(cents / 100).toFixed(2)}`;
+  return `R${(cents / 100).toFixed(2)}`;
 }
 
 function formatDate(timestamp: number): string {
-  return new Date(timestamp).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  return new Date(timestamp).toLocaleDateString("en-ZA", { month: "short", day: "numeric", year: "numeric" });
 }
 
 // ── Page ─────────────────────────────────────────────────────────────────────
@@ -281,7 +281,7 @@ export default function AccountPage() {
                 <div className="mt-10 pt-8 border-t border-black/10">
                   <p className="text-xs tracking-[0.2em] text-black/40 uppercase mb-4">Choose an amount</p>
                   <div className="flex flex-wrap gap-3">
-                    {["$25", "$50", "$100", "$200", "$500", "$1000"].map((amount) => (
+                    {["R50", "R100", "R200", "R500", "R1000", "R2500"].map((amount) => (
                       <button
                         key={amount}
                         className="px-6 py-3 rounded-full border border-black/10 text-sm font-bold hover:bg-black hover:text-white transition-all"
