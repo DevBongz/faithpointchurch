@@ -5,12 +5,14 @@ import { queryClient } from "@/lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ConvexClientProvider } from "./ConvexClientProvider";
+import { SplashScreen } from "@/components/splash-screen";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ConvexClientProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
+          <SplashScreen />
           {children}
           <Toaster />
         </TooltipProvider>
