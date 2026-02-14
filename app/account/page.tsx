@@ -481,7 +481,6 @@ export default function AccountPage() {
 
               {/* Danger Zone */}
               <div className="mt-16 pt-8 border-t border-red-500/10">
-                <h3 className="text-xs tracking-[0.2em] text-red-400/60 uppercase font-bold mb-4">Danger Zone</h3>
                 <button
                   onClick={handleSignOut}
                   className="text-xs tracking-[0.2em] text-red-400/60 hover:text-red-400 transition-colors flex items-center gap-2"
