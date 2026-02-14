@@ -67,6 +67,28 @@ export default defineSchema({
     servingTeam: v.optional(v.string()),
   }).index("by_userId", ["userId"]),
 
+  // ─── Membership Applications ──────────────────────────────────────────────
+  memberships: defineTable({
+    userId: v.string(), // Better Auth user ID
+    fullName: v.string(), // Official ID names for certificate
+    contactNumber: v.string(),
+    email: v.string(),
+    isServing: v.boolean(), // Are you already serving?
+    servingTeam: v.optional(v.string()), // Which team / what are you helping with?
+    status: v.union(
+      v.literal("pending"), // Awaiting review
+      v.literal("approved"), // Accepted into membership class
+      v.literal("graduated"), // Completed membership class
+      v.literal("declined") // Declined
+    ),
+    appliedAt: v.string(), // ISO date string
+    reviewedAt: v.optional(v.string()),
+    reviewedBy: v.optional(v.string()), // Admin user ID
+    notes: v.optional(v.string()), // Admin notes
+  })
+    .index("by_userId", ["userId"])
+    .index("by_status", ["status"]),
+
   // ─── Media Content ─────────────────────────────────────────────────────────
   mediaContent: defineTable({
     title: v.string(),

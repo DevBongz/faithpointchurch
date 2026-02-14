@@ -17,15 +17,22 @@ import {
   Clock,
   BookOpen,
   Loader2,
+  Users,
+  CheckCircle2,
+  ArrowRight,
+  Phone,
+  Mail,
+  HandHeart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { useQuery } from "convex/react";
+import { useQuery, useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
+import { toast } from "sonner";
 
 /* eslint-disable @next/next/no-img-element */
 
-type Tab = "overview" | "giving" | "orders" | "settings";
+type Tab = "overview" | "giving" | "orders" | "membership" | "settings";
 
 // ── Fallback data (shown before Convex connection) ──────────────────────────
 
@@ -69,6 +76,17 @@ export default function AccountPage() {
   // Convex queries — only run when we have a userId
   const convexGiving = useQuery(api.giving.listByUser, userId ? { userId } : "skip");
   const convexOrders = useQuery(api.orders.listByUser, userId ? { userId } : "skip");
+  const membership = useQuery(api.memberships.getByUserId, userId ? { userId } : "skip");
+  const applyForMembership = useMutation(api.memberships.apply);
+
+  // Membership form state
+  const [membershipForm, setMembershipForm] = useState({
+    fullName: "",
+    contactNumber: "",
+    isServing: null as boolean | null,
+    servingTeam: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Use Convex data if it has entries, otherwise show fallback
   const givingHistory =
@@ -96,6 +114,7 @@ export default function AccountPage() {
 
   const tabs: { key: Tab; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
     { key: "overview", label: "Overview", icon: User },
+    { key: "membership", label: "Membership", icon: Users },
     { key: "giving", label: "Giving", icon: Heart },
     { key: "orders", label: "Orders", icon: ShoppingBag },
     { key: "settings", label: "Settings", icon: Settings },
@@ -105,6 +124,36 @@ export default function AccountPage() {
     await signOut();
     router.push("/");
     router.refresh();
+  };
+
+  const handleMembershipSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!userId || !user.email) return;
+    if (membershipForm.isServing === null) {
+      toast.error("Please let us know if you're currently serving.");
+      return;
+    }
+    if (membershipForm.isServing && !membershipForm.servingTeam.trim()) {
+      toast.error("Please let us know which team you're serving with.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await applyForMembership({
+        userId,
+        fullName: membershipForm.fullName,
+        contactNumber: membershipForm.contactNumber,
+        email: user.email,
+        isServing: membershipForm.isServing,
+        servingTeam: membershipForm.isServing ? membershipForm.servingTeam : undefined,
+      });
+      toast.success("Your membership application has been submitted! Someone from the Membership Team will reach out to you.");
+    } catch {
+      toast.error("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -168,6 +217,58 @@ export default function AccountPage() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
+              {/* Membership Invitation Banner (only if not yet a member) */}
+              {!membership && (
+                <div className="mb-12 relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.06] to-transparent p-8 md:p-10">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-white/[0.02] rounded-full -translate-y-1/2 translate-x-1/2" />
+                  <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                    <div className="flex items-start gap-5">
+                      <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 mt-1">
+                        <HandHeart className="w-6 h-6 text-white/70" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-1">
+                          Become an Official Member
+                        </h3>
+                        <p className="font-serif italic text-white/50 text-sm md:text-base max-w-lg">
+                          Join our membership classes and become part of the FaithPoint family. We&apos;d love to walk this journey with you.
+                        </p>
+                      </div>
+                    </div>
+                    <Button
+                      onClick={() => setActiveTab("membership")}
+                      className="rounded-full bg-white text-black hover:bg-white/90 tracking-widest text-xs px-8 h-12 flex items-center gap-2 flex-shrink-0"
+                    >
+                      SIGN UP <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </div>
+              )}
+
+              {/* Membership Status Banner (if member) */}
+              {membership && (
+                <div className="mb-12 rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-white/60" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-sm">Membership Application</p>
+                      <p className="text-xs text-white/40">
+                        Status: <span className="capitalize text-white/60">{membership.status}</span>
+                        {membership.servingTeam && <> &middot; Serving with: <span className="text-white/60">{membership.servingTeam}</span></>}
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => setActiveTab("membership")}
+                      className="ml-auto text-[10px] tracking-[0.2em] text-white/30 hover:text-white transition-colors"
+                    >
+                      VIEW DETAILS
+                    </button>
+                  </div>
+                </div>
+              )}
+
               {/* Quick Actions */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
                 {[
@@ -381,6 +482,226 @@ export default function AccountPage() {
                   <Link href="/merch" className="text-xs tracking-[0.2em] text-white/60 hover:text-white mt-4 inline-block">
                     BROWSE THE STORE
                   </Link>
+                </div>
+              )}
+            </motion.div>
+          )}
+
+          {/* ── MEMBERSHIP ──────────────────────────────────────── */}
+          {activeTab === "membership" && (
+            <motion.div
+              key="membership"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+              className="max-w-2xl"
+            >
+              {/* Already submitted */}
+              {membership ? (
+                <div>
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-10 mb-8">
+                    <div className="flex items-center gap-3 mb-6">
+                      <CheckCircle2 className="w-6 h-6 text-white/60" />
+                      <h2 className="text-2xl font-bold tracking-tight">Membership Application</h2>
+                    </div>
+
+                    <div className="space-y-5">
+                      <div className="flex items-center gap-3 pb-4 border-b border-white/5">
+                        <span className="text-xs tracking-[0.2em] text-white/40 uppercase w-32 flex-shrink-0">Status</span>
+                        <span className={`text-sm font-bold px-3 py-1 rounded-full ${
+                          membership.status === "pending" ? "bg-yellow-500/10 text-yellow-400" :
+                          membership.status === "approved" ? "bg-green-500/10 text-green-400" :
+                          membership.status === "graduated" ? "bg-blue-500/10 text-blue-400" :
+                          "bg-red-500/10 text-red-400"
+                        }`}>
+                          {membership.status === "pending" && "Awaiting Review"}
+                          {membership.status === "approved" && "Approved"}
+                          {membership.status === "graduated" && "Graduated"}
+                          {membership.status === "declined" && "Declined"}
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-3 pb-4 border-b border-white/5">
+                        <span className="text-xs tracking-[0.2em] text-white/40 uppercase w-32 flex-shrink-0 pt-1">Full Name</span>
+                        <span className="text-sm">{membership.fullName}</span>
+                      </div>
+                      <div className="flex items-start gap-3 pb-4 border-b border-white/5">
+                        <span className="text-xs tracking-[0.2em] text-white/40 uppercase w-32 flex-shrink-0 pt-1">Contact</span>
+                        <span className="text-sm">{membership.contactNumber}</span>
+                      </div>
+                      <div className="flex items-start gap-3 pb-4 border-b border-white/5">
+                        <span className="text-xs tracking-[0.2em] text-white/40 uppercase w-32 flex-shrink-0 pt-1">Email</span>
+                        <span className="text-sm">{membership.email}</span>
+                      </div>
+                      <div className="flex items-start gap-3 pb-4 border-b border-white/5">
+                        <span className="text-xs tracking-[0.2em] text-white/40 uppercase w-32 flex-shrink-0 pt-1">Serving</span>
+                        <span className="text-sm">
+                          {membership.isServing ? `Yes — ${membership.servingTeam}` : "Not yet"}
+                        </span>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <span className="text-xs tracking-[0.2em] text-white/40 uppercase w-32 flex-shrink-0 pt-1">Applied</span>
+                        <span className="text-sm text-white/60">
+                          {new Date(membership.appliedAt).toLocaleDateString("en-ZA", { month: "long", day: "numeric", year: "numeric" })}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {membership.status === "pending" && (
+                    <p className="font-serif italic text-white/40 text-sm text-center">
+                      Thank you for signing up! Someone from the Membership Team will reach out to you soon.
+                    </p>
+                  )}
+                  {membership.status === "approved" && (
+                    <p className="font-serif italic text-white/40 text-sm text-center">
+                      Welcome to the membership class! We&apos;re excited to have you on this journey.
+                    </p>
+                  )}
+                  {membership.status === "graduated" && (
+                    <p className="font-serif italic text-white/40 text-sm text-center">
+                      Congratulations on completing the membership class! You&apos;re officially part of the family.
+                    </p>
+                  )}
+                </div>
+              ) : (
+                /* ── Membership Application Form ── */
+                <div>
+                  {/* Warm welcome header */}
+                  <div className="mb-10">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-3">
+                      Membership Sign-up<span className="text-white/20">.</span>
+                    </h2>
+                    <p className="font-serif italic text-white/50 max-w-lg text-base">
+                      Thank you for your interest in our Membership Classes! Once you&apos;ve signed up, someone from the Membership Team will reach out to you.
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleMembershipSubmit} className="space-y-8">
+                    {/* Full Name */}
+                    <div>
+                      <label className="block text-[10px] tracking-[0.25em] text-white/40 uppercase mb-2">
+                        Full Names &amp; Surname <span className="text-white/60">*</span>
+                      </label>
+                      <p className="text-[10px] text-white/30 mb-3 font-serif italic">
+                        Your official ID names for your certificate when you graduate
+                      </p>
+                      <input
+                        type="text"
+                        required
+                        value={membershipForm.fullName}
+                        onChange={(e) => setMembershipForm((f) => ({ ...f, fullName: e.target.value }))}
+                        placeholder="e.g. John Sipho Dlamini"
+                        className="w-full bg-transparent border border-white/10 rounded-xl px-5 py-4 text-sm tracking-wider placeholder:text-white/20 focus:outline-none focus:border-white/40 transition-colors"
+                      />
+                    </div>
+
+                    {/* Contact Number */}
+                    <div>
+                      <label className="block text-[10px] tracking-[0.25em] text-white/40 uppercase mb-2">
+                        Contact Number <span className="text-white/60">*</span>
+                      </label>
+                      <div className="relative">
+                        <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" />
+                        <input
+                          type="tel"
+                          required
+                          value={membershipForm.contactNumber}
+                          onChange={(e) => setMembershipForm((f) => ({ ...f, contactNumber: e.target.value }))}
+                          placeholder="+27 00 000 0000"
+                          className="w-full bg-transparent border border-white/10 rounded-xl pl-12 pr-5 py-4 text-sm tracking-wider placeholder:text-white/20 focus:outline-none focus:border-white/40 transition-colors"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Email (pre-filled) */}
+                    <div>
+                      <label className="block text-[10px] tracking-[0.25em] text-white/40 uppercase mb-2">
+                        Email
+                      </label>
+                      <div className="relative">
+                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" />
+                        <input
+                          type="email"
+                          disabled
+                          value={user.email || ""}
+                          className="w-full bg-white/[0.02] border border-white/10 rounded-xl pl-12 pr-5 py-4 text-sm tracking-wider text-white/40 cursor-not-allowed"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Currently serving? */}
+                    <div>
+                      <label className="block text-[10px] tracking-[0.25em] text-white/40 uppercase mb-4">
+                        Are you already serving or helping out somewhere in church? <span className="text-white/60">*</span>
+                      </label>
+                      <div className="flex gap-3">
+                        <button
+                          type="button"
+                          onClick={() => setMembershipForm((f) => ({ ...f, isServing: true }))}
+                          className={`flex-1 py-4 rounded-xl border text-sm font-bold tracking-wider transition-all ${
+                            membershipForm.isServing === true
+                              ? "bg-white text-black border-white"
+                              : "bg-transparent text-white/50 border-white/10 hover:border-white/30"
+                          }`}
+                        >
+                          Yes
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setMembershipForm((f) => ({ ...f, isServing: false, servingTeam: "" }))}
+                          className={`flex-1 py-4 rounded-xl border text-sm font-bold tracking-wider transition-all ${
+                            membershipForm.isServing === false
+                              ? "bg-white text-black border-white"
+                              : "bg-transparent text-white/50 border-white/10 hover:border-white/30"
+                          }`}
+                        >
+                          Not yet
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Serving team (conditional) */}
+                    <AnimatePresence>
+                      {membershipForm.isServing && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <label className="block text-[10px] tracking-[0.25em] text-white/40 uppercase mb-2">
+                            Which team are you in? Or what are you helping out with? <span className="text-white/60">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            value={membershipForm.servingTeam}
+                            onChange={(e) => setMembershipForm((f) => ({ ...f, servingTeam: e.target.value }))}
+                            placeholder="e.g. Worship Team, Media Team, Ushering..."
+                            className="w-full bg-transparent border border-white/10 rounded-xl px-5 py-4 text-sm tracking-wider placeholder:text-white/20 focus:outline-none focus:border-white/40 transition-colors"
+                          />
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {/* Submit */}
+                    <div className="pt-4">
+                      <Button
+                        type="submit"
+                        disabled={isSubmitting || !membershipForm.fullName || !membershipForm.contactNumber || membershipForm.isServing === null}
+                        className="w-full rounded-xl bg-white text-black hover:bg-white/90 tracking-widest text-xs h-14 font-bold disabled:opacity-30 disabled:cursor-not-allowed"
+                      >
+                        {isSubmitting ? (
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                        ) : (
+                          "SUBMIT APPLICATION"
+                        )}
+                      </Button>
+                      <p className="text-center text-[10px] text-white/30 mt-4 font-serif italic">
+                        By submitting, you&apos;re signing up for our Membership Classes. We&apos;ll be in touch!
+                      </p>
+                    </div>
+                  </form>
                 </div>
               )}
             </motion.div>

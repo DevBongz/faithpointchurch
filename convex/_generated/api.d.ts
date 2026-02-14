@@ -10,6 +10,7 @@
 
 import type * as giving from "../giving.js";
 import type * as media from "../media.js";
+import type * as memberships from "../memberships.js";
 import type * as orders from "../orders.js";
 import type * as products from "../products.js";
 import type * as seed from "../seed.js";
@@ -24,6 +25,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   giving: typeof giving;
   media: typeof media;
+  memberships: typeof memberships;
   orders: typeof orders;
   products: typeof products;
   seed: typeof seed;
